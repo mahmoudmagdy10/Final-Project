@@ -1,0 +1,404 @@
+:root {
+  --main-padding: 100px;
+  --main-color: rgb(0, 131, 143);
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium screen  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large screen  */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* start title  */
+
+.title .container .info {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 150px;
+}
+.title .container .info h3 {
+  text-transform: capitalize;
+  letter-spacing: 1.3px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--main-color);
+}
+.title .container .info p {
+  text-transform: capitalize;
+}
+.title .container .box-one {
+  display: flex;
+  margin-left: 150px;
+  margin-bottom: 50px;
+}
+.title .container .box-one img {
+  max-width: 100%;
+  width: 270px;
+  border-radius: 5px;
+}
+.title .container .box-one .det {
+  padding-top: 26px;
+  margin-left: 50px;
+}
+.title .container .box-one .det h3 {
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 1.3px;
+  margin-bottom: 10px;
+  font-size: 31px;
+  font-weight: bold;
+}
+.title .container .box-one .det h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: var(--main-color);
+  top: -11px;
+}
+
+.title .container .box-one .det p {
+  font-weight: normal;
+  margin-bottom: 29px;
+  text-transform: capitalize;
+}
+.title .container .box-one .det a {
+  text-transform: capitalize;
+  font-size: 20px;
+  width: fit-content;
+  background-color: var(--main-color);
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+}
+.title .container .box-one .det a:hover {
+  background-color: rgb(0 131 143 / 28%);
+}
+.title .container .box-two .det a:hover {
+  background-color: rgb(0 131 143 / 28%);
+}
+.title .container .box-three .det a:hover {
+  background-color: rgb(0 131 143 / 28%);
+}
+
+.title .container .box-two {
+  display: flex;
+  margin-bottom: 50px;
+  margin-left: 450px;
+}
+.title .container .box-two img {
+  max-width: 100%;
+  width: 270px;
+  border-radius: 5px;
+}
+.title .container .box-two .det {
+  padding-top: 26px;
+  margin-right: 50px;
+}
+.title .container .box-two .det h3 {
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 1.3px;
+  margin-bottom: 10px;
+  font-size: 31px;
+  font-weight: bold;
+}
+.title .container .box-two .det h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: var(--main-color);
+  top: -11px;
+}
+
+.title .container .box-two .det p {
+  font-weight: normal;
+  margin-bottom: 29px;
+  text-transform: capitalize;
+}
+.title .container .box-two .det a {
+  text-transform: capitalize;
+  font-size: 20px;
+  width: fit-content;
+  background-color: var(--main-color);
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+}
+.title .container .box-three {
+  display: flex;
+  margin-left: 150px;
+  margin-bottom: 5px;
+}
+.title .container .box-three img {
+  max-width: 100%;
+  width: 270px;
+  border-radius: 5px;
+}
+.title .container .box-three .det {
+  padding-top: 26px;
+  margin-left: 50px;
+}
+.title .container .box-three .det h3 {
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 1.3px;
+  margin-bottom: 10px;
+  font-size: 31px;
+  font-weight: bold;
+}
+.title .container .box-three .det h3::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: var(--main-color);
+  top: -11px;
+  left: 79px;
+}
+
+.title .container .box-three .det p {
+  font-weight: normal;
+  margin-bottom: 29px;
+  text-transform: capitalize;
+}
+.title .container .box-three .det a {
+  text-transform: capitalize;
+  font-size: 20px;
+  width: fit-content;
+  background-color: var(--main-color);
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* end title  */
+
+.one .container {
+}
+.pro {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
+.pro .container .one {
+  width: fit-content;
+  background-color: var(--main-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 20px 40px;
+  cursor: pointer;
+  color: white;
+  text-transform: capitalize;
+}
+.pro .container .two {
+  width: fit-content;
+  background-color: var(--main-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 20px 40px;
+  cursor: pointer;
+  color: white;
+  text-transform: capitalize;
+}
+.pro .container h2 {
+  margin-bottom: 50px;
+  text-transform: capitalize;
+}
+.pro .container #first {
+  width: 400px;
+  height: 300px;
+  background-color: #ddd;
+  display: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+.pro .container #first p {
+  background-color: var(--main-color);
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+}
+.pro .container #second {
+  width: 400px;
+  height: 300px;
+  background-color: #ddd;
+  display: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 5px auto;
+}
+.pro .container #second p {
+  background-color: var(--main-color);
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+}
+.empty {
+  margin-top: 10px;
+}
+/* start deta  */
+/* .deta {
+  background-color: var(--main-color);
+  height: 264vh;
+}
+
+.deta .container .more {
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  margin: 47px auto;
+  position: relative;
+  left: -23%;
+  transform: translate(44%, 11%);
+  bottom: 20px;
+  border-radius: 10px;
+}
+.deta .container .more p {
+  margin-top: 20px;
+  top: 43%;
+  left: 14%;
+  transform: translate(50%);
+  position: absolute;
+  text-transform: capitalize;
+  background-color: bisque;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.deta .container .data {
+  width: 900px;
+  height: 1049px;
+  background-color: white;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+.deta .container .data form h3 {
+  color: var(--main-color);
+  text-transform: capitalize;
+  margin: 23px 100px;
+  font-size: 22px;
+  letter-spacing: 1.3px;
+  font-weight: bold;
+  padding-top: 20px;
+  position: relative;
+}
+.deta .container .data form h3::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: var(--main-color);
+  bottom: -10px;
+}
+.deta .container .data form label {
+  margin: 10px 100px;
+}
+.deta .container .data form input[type="text"],
+input[type="date"] {
+  margin: 10px 100px;
+  width: 700px;
+  height: 40px;
+  background-color: #ddd;
+  border: 1px solid;
+}
+
+.deta .container .data form textarea {
+  margin: 10px 100px;
+  background-color: #ddd;
+  border: 1px solid;
+  width: 700px;
+  height: 106px;
+}
+.deta .container .data form input[type="checkbox"] {
+  margin-left: 100px;
+  margin-top: 5px;
+}
+.deta .container .data form .alone {
+  display: flex;
+}
+.deta .container .data form .alone label {
+  width: 400px;
+  margin: 0px 5px;
+}
+.deta .container .data form .robot {
+  display: none;
+  width: 400px;
+  height: 100px;
+  background-color: #dddddd4a;
+  margin: 10px auto;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.deta .container .data form .robot input[type="checkbox"] {
+  margin-top: 26px;
+}
+.deta .container .data form .robot label {
+  margin: 20px 5px;
+}
+.deta .container .data form input[type="submit"] {
+  color: white;
+  background-color: var(--main-color);
+  width: 100px;
+  height: 44px;
+  padding: 10px 15px;
+  border: none;
+  margin-left: 150px;
+  margin-top: 30px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.deta .container .data form input[type="submit"]:hover {
+  background-color: rgb(0 131 143 / 69%);
+} */
+
+/*end deta  */
