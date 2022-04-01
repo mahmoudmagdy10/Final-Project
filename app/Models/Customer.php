@@ -41,6 +41,12 @@ class Customer extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+    public function  scopeSelection($query)
+    {
+
+        return $query->select('id', 'email', 'name', 'phone', 'address','country');
+    }
+
     // Rest omitted for brevity
 
     /**

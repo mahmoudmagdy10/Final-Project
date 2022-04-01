@@ -2,8 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomerAuth\TestController;
 use App\Http\Controllers\CustomerAuth\AuthController;
+use App\Http\Controllers\CustomerAuth\PagesController;
+use App\Http\Controllers\CustomerAuth\UploadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,12 @@ Route::namespace('CustomerAuth')->group(function () {
 
     Route::get('/register', [AuthController::class, 'register'])->name('customer.register');
     Route::post('/store', [AuthController::class, 'store'])->name('customer.storeInfo');
-    Route::get('/homepage', [AuthController::class, 'homepage'])->name('customer.homepage');
+    
+    //pages
+    Route::get('/homepage/{id}', [PagesController::class, 'homepage'])->name('customer.homepage');
+    Route::get('/construction_style/{id}', [PagesController::class, 'construction_style'])->name('customer.construction_style')->middleware('auth_user:customer-api');
+    Route::get('/my_projects/{id}', [PagesController::class, 'my_projects'])->name('customer.my_projects')->middleware('auth_user:customer-api');
+    Route::post('/upload/{id}', [UploadsController::class, 'upload'])->name('customer.upload');
 
-});
-Route::prefix('customer')->middleware('auth_guard:customer-api')->group(function () {
-    Route::post('profile', function () {
-        return 'Only Authentecated Users Can reach this';
-    });
+
 });

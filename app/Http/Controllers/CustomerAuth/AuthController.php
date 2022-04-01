@@ -11,8 +11,11 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Auth;
+use Illuminate\Support\Facades\File;
 use App\Http\Requests\CustomerRequests\RegisterRequest;
 use App\Models\Customer;
+use App\Models\Project;
+use App\Models\Property;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -29,10 +32,6 @@ class AuthController extends Controller
         return view('layout.login');
     }
 
-    public function homepage()
-    {
-        return view('customer.homepage');
-    }
 
     protected function store(Request $request)
     {
@@ -64,10 +63,10 @@ class AuthController extends Controller
 
             ]);
             return redirect()->route('api.index')->with(['success' => 'تم الحفظ بنجاح']);
-        } catch (\Exception $e) {
-            return redirect()->route('customer.register')->with('هناك خطأ يرجي المحاوله في وقت اخر');
-            echo("no");
 
+        } catch (\Exception $e) {
+
+            return redirect()->route('customer.register')->with('هناك خطأ يرجي المحاوله في وقت اخر');
         }
     }
 
@@ -85,4 +84,5 @@ class AuthController extends Controller
             return $this->returnError('', 'some thing went wrong');
         }
     }
+
 }

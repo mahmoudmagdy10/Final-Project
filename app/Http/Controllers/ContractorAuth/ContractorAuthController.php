@@ -21,11 +21,6 @@ class ContractorAuthController extends Controller
     {
         return view('contractor.auth.register');
     }
-    public function homepage()
-    {
-        return view('contractor.homepage');
-    }
-
     protected function store(Request $request)
     {
         try {
@@ -61,41 +56,7 @@ class ContractorAuthController extends Controller
             return redirect()->route('customer.register')->with('هناك خطأ يرجي المحاوله في وقت اخر');
         }
     }
-    public function index()
-    {
-        return view('contractor.auth.login');
-    }
-    // public function login(Request $request)
-    // {
-    //     try {
-    //         // Validation
-    //         $rules = [
-    //             "email" => "required|exists:contractors,email",
-    //             "password" => "required"
-    //         ];
 
-    //         $validator = Validator::make($request->all(), $rules);
-    //         if ($validator->fails()) {
-    //             return redirect()->route('contractor.index');
-    //         }
-    //     } catch (\Exception $e) {
-    //         return $this->returnError($e->getCode(), $e->getMessage());
-    //     }
-
-    //     //Login
-    //     $credentails = $request->only(['email', 'password']);
-    //     $token = Auth::guard('contractor-api')->attempt($credentails);  /* Token الخاص ب ال user */
-    //     $contractor = Auth('contractor-api')->user();                 /* return user data */
-    //     $contractor->contractor_token = $token;                     /* Add Key to the returned data = user's token */
-    //     if (!$token){
-    //         return $this->returnError('E0055', 'البيانات غير موجوده');
-    //         return redirect()->back()->with(['error' => 'هناك خطأ بالبيانات']);
-    //     }else{
-    //         return $this->returnDate('contractor', $contractor);
-    //         return redirect()->route('admin.dashboard');
-    //     }
-
-    // }
     public function logout(Request $request)
     {
         $token = $request->header('auth_token');

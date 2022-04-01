@@ -59,12 +59,8 @@ class BasicAuthController extends Controller
                 Contractor::where('id',$contractor->id)->update([
                     'remember_token' => $request->remember_token
                 ]);
-
-                // $request->headers->set('auth-token', (string) $token, true);
                 
-                $request->headers->set('auth-token', $request->remember_token);
-                return $this->returnDate('contractor', $contractor);
-                // return redirect()->route('contractor.homepage');
+                return view('contractor.pages.homepage',compact('contractor'));
             }
         } 
         else if($customer && Hash::check($password, $customer->password)) {
@@ -81,14 +77,11 @@ class BasicAuthController extends Controller
                 Customer::where('id',$customer->id)->update([
                     'remember_token' => $request->remember_token
                 ]);
-                return $this->returnDate('customer', $customer);
-                // return redirect()->route('customer.homepage');
+                return view('customer.pages.homepage',compact('customer'));
             }
         } else{
             return redirect()->route('api.index');
         }
-
-
     }
 
     public function list(){

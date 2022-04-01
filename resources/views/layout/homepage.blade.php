@@ -7,16 +7,12 @@
             <div class="content">
                 <p>Do you have more to say and show? You can do it in this section.
                     Add pictures and a short description to show visitors more of
-                    whatever it is you want.</p>
-           
-                   
+                    whatever it is you want.</p>        
                     <a href="{{route('api.index')}}">sign in</a>
-                
             </div>
             <div class="details">
                 <h1>Welcome to  Construction Project</h1>
             </div>
-
         </div>
     </div>
     <!-- end  landing  -->

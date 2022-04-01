@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('contractor.layout.app')
 
 @section('content')
     <!-- start landing  -->
@@ -36,51 +36,6 @@
     <!-- end section  -->
     <!-- start road map  -->
     <div class="road-map">
-        <div class="info">
-          <h1>Road Map</h1>
-          <h3>if you a customer</h3>
-          <p>follow this steps</p>
-        </div>
-        <div class="center-line">
-          <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
-        </div>
-        <div class="row row-1">
-          <section>
-            <i class="icon fa-regular fa-1"></i>
-            <div class="details">
-              <span class="title">choose style </span>
-            </div>
-            <p>Choose your architecture or upload your own</p>
-          </section>
-        </div>
-        <div class="row row-2">
-          <section>
-            <i class="icon fa-solid fa-2"></i>
-            <div class="details">
-              <span class="title">Fill out the form</span>
-            </div>
-            <p>Fill in your form with the required data to get the right price</p>
-          </section>
-        </div>
-        <div class="row row-1">
-          <section>
-            <i class="icon fa-solid fa-3"></i>
-            <div class="details">
-              <span class="title">publish </span>
-            </div>
-            <p>If you agree to the price, publish your project to contractors</p>
-          </section>
-        </div>
-        <div class="row row-2">
-          <section>
-            <i class="icon fa-solid fa-4"></i>
-            <div class="details">
-              <span class="title">contract </span>
-            </div>
-            <p>Upon approval, the contract will be signed</p>
-          </section>
-        </div>
-      </div>
       <div class="road-map road-map1">
         <div class="info">
           <h3>if you a contractor</h3>
@@ -120,6 +75,7 @@
         </div>
       </div>
     <!-- end road map  -->
+    
     <!-- start footer  -->
     <div class="footer">
         <div class="container">
