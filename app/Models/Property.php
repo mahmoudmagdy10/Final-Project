@@ -34,5 +34,35 @@ class Property extends Model
         "customer_id",
         "project_id",
     ];
+    public function  scopeSelection($query)
+    {
+
+        return $query->select(        
+            "PREDICTION",
+            "OverallQual",
+            "Neighborhood",
+            "GrLivArea",
+            "GarageCars",
+            "BsmtQual",
+            "ExterQual",
+            "GarageArea",
+            "KitchenQual",
+            "YearBuilt",
+            "TotalBsmtSF",
+            "FirstFlrSF",
+            "GarageFinish",
+            "FullBath",
+            "YearRemodAdd",
+            "GarageType",
+            "FireplaceQu",
+            "Foundation",
+            "MSSubClass",
+            "TotRmsAbvGrd",
+            "Fireplaces",
+            "customer_id",
+            "project_id"
+        );
+    }
+
 
 }

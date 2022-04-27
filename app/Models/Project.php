@@ -12,9 +12,13 @@ class Project extends Model
     protected $table = 'projects';
     protected $fillable = [
         'arch',
-        'file',
+        'file_path',
         'customer_id',
     ];
 
+    public function  scopeSelection($query)
+    {
 
+        return $query->select('id', 'arch', 'file_path', 'customer_id');
+    }
 }

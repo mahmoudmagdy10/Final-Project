@@ -42,10 +42,11 @@ class PagesController extends Controller
     public function my_projects($id)
     {
         $customer = Customer::select()->find($id);
-        if (!$customer) {
+        $props = Property::all()->where('customer_id', '=', $id);
+        if (!$customer && !$props) {
             return redirect()->route('api.getLogin');
         } else {
-            return view('customer.pages.my_projects', compact('customer'));
+            return view('customer.pages.my_projects')->with(compact('customer'))->with(compact('props'));
         }
     }
 }

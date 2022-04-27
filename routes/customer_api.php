@@ -27,6 +27,8 @@ Route::namespace('CustomerAuth')->group(function () {
     Route::get('/construction_style/{id}', [PagesController::class, 'construction_style'])->name('customer.construction_style')->middleware('auth_user:customer-api');
     Route::get('/my_projects/{id}', [PagesController::class, 'my_projects'])->name('customer.my_projects')->middleware('auth_user:customer-api');
     Route::post('/upload/{id}', [UploadsController::class, 'upload'])->name('customer.upload');
+    Route::get('/logout/{id}', [AuthController::class, 'logout'])->name('customer.logout')->middleware('auth_user:contractor-api');
+
 
 
 });

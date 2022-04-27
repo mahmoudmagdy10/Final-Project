@@ -70,12 +70,18 @@ class AuthController extends Controller
         }
     }
 
-    public function logout(Request $request)
+    public function logout($id)
     {
-        $token = $request->header('auth_token');
+        $customer = Customer::select()->find($id);
+        $token = $customer->remember_token;
         if ($token) {
             try {
-                JWTAuth::setToken($token)->invalidate();
+                JWTAuth::setToken($customer->remember_token)->invalidate();
+                Customer::where('id',$customer->id)->update([
+                    'remember_token' => null
+                ]);                
+                return redirect()->route('api.index')->with(['success' => 'تم الحفظ بنجاح']);
+
             } catch (TokenInvalidException $e) {
                 return $this->returnError('', 'some thing went wrongs');
             }

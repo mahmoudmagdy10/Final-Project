@@ -57,12 +57,18 @@ class ContractorAuthController extends Controller
         }
     }
 
-    public function logout(Request $request)
+    public function logout($id)
     {
-        $token = $request->header('auth_token');
+        $contractor = Contractor::select()->find($id);
+        $token = $contractor->remember_token;
         if ($token) {
             try {
-                JWTAuth::setToken($token)->invalidate();
+                JWTAuth::setToken($contractor->remember_token)->invalidate();
+                Contractor::where('id',$contractor->id)->update([
+                    'remember_token' => null
+                ]);                
+                return redirect()->route('api.index')->with(['success' => 'تم الحفظ بنجاح']);
+
             } catch (TokenInvalidException $e) {
                 return $this->returnError('', 'some thing went wrongs');
             }

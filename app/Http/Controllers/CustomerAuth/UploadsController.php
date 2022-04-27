@@ -39,16 +39,16 @@ class UploadsController extends Controller
             // Store Project data && save File 2D
             try{
                 $request->request->add(['id'=> $user->id]);
-                Project::create([
-                    'arch' => $request['arch'],    
-                    'file' => $request['file'],    
-                    'customer_id' => $request['id'],    
-                ]);
-
                 if($request->file()) {
                     $fileName = time().'_'.$request->file->getClientOriginalName();
                     $request->file('file')->move(base_path().'/public/files_2D/',$fileName);
+                    $request->request->add(['fileName'=> $fileName]);
                 }
+                Project::create([
+                    'arch' => $request['arch'],    
+                    'file_path' => $request['fileName'],     
+                    'customer_id' => $request['id'],    
+                ]);
 
             } catch (\Exception $e) {
     
@@ -94,11 +94,14 @@ class UploadsController extends Controller
                     'customer_id' => $request['id'],    
                     'project_id' => $request['project_id'],    
             ]);
-                return redirect()->route('customer.my_projects',$id);  
+
+            // return view('customer.pages.my_projects', compact('customer'));             
+            return redirect()->route('customer.my_projects',$id);
                 
             } catch (\Exception $e) {
     
                 return redirect()->route('customer.construction_style',$id);            
             }
     }
+
 }

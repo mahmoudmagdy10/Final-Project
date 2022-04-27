@@ -84,9 +84,4 @@ class BasicAuthController extends Controller
         }
     }
 
-    public function list(){
-        $response = Http::get("https://app2.datarobot.com/");
-        return $response;
-
-    }
 }

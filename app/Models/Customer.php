@@ -31,7 +31,6 @@ class Customer extends Authenticatable implements JWTSubject
 
     protected $hidden = [
         'password',
-        'remember_token',
         'created_at',
         'updated_at',
     ];
@@ -44,7 +43,7 @@ class Customer extends Authenticatable implements JWTSubject
     public function  scopeSelection($query)
     {
 
-        return $query->select('id', 'email', 'name', 'phone', 'address','country');
+        return $query->select('id', 'email', 'name', 'phone', 'address','country','remember_token');
     }
 
     // Rest omitted for brevity

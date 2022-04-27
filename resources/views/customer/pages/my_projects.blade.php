@@ -1,36 +1,34 @@
 @extends('customer.layout.app')
+@section('link')
+<link rel="stylesheet" href="{{asset('css/my_projects/my_project.css')}}">
+@endsection
 
 @section('content')
 <div class="title">
-      <div class="container">
+    <div class="container">
         <div class="info">
-          <h3>Your project</h3>
+            <h3>Your project</h3>
         </div>
-        <div class="box-one">
-          <img src="{{asset('image-home/photo-1599809275671-b5942cabc7a2.jpeg')}}" alt="" />
-          <div class="det">
-            <h3>House</h3>
-            <div>
-              <p>costs: <span>120,000$</span></p>
-              <p>publish in :yy-mm-hh</p>
-            </div>
 
-            <a href="#">edit</a>
-          </div>
-        </div>
-        <div class="box-two">
-          <div class="det">
-            <h3>restaurant</h3>
-            <div>
-              <p>publish in :yy-mm-hh</p>
-              <p>costs: <span>120,000$</span></p>
-              <p>contractor:xyz Holding</p>
-            </div>
+        <div class="projects">
+        @isset($customer)
+          @foreach($props as $prop)
+            <div class="card">
+                <div class="box">
+                    <div class="det">
 
-            <a href="#">view contract</a>
-          </div>
-          <img src="{{asset('image-home/photo-1564013799919-ab600027ffc6.jpeg')}}" alt="" />
+                        <img src="{{asset('image-home/house2.jpg')}}" alt="" />
+                            <ul>
+                                <h3>House</h3>
+                                Predict Salary : <li>{{$prop->PREDICTION}}</li>
+                                Publish at : <li>{{$prop->created_at}}</li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+          @endforeach
+        @endisset
         </div>
-      </div>
     </div>
+</div>
 @endsection
